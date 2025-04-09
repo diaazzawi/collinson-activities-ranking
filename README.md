@@ -9,6 +9,7 @@ Table of Contents
 - [Package Managers](#package-managers)
 - [Server Tech Stack](#server-tech-stack)
 - [Client Tech Stack](#client-tech-stack)
+- [Rationale Behind Tech Stack and Package Selections](#rationale-behind-tech-stack-and-package-selections)
 - [Installing Dependencies](#installing-dependencies)
 - [Configuration](#configuration)
 - [Usage](#usage)
@@ -45,7 +46,30 @@ You need to make sure you have the following runtime environments installed on y
 - **Components:** Material UI
 - **Styling:** Tailwind Styled Components (TailwindCSS + Styled Components)
 - **Date and Time:** Luxon
-- **Routing & Authentication:** React Router v7 with React Auth.
+- **Routing** React Router.
+
+- **Runtime:** Bun
+- **Server Framework:** Elysia
+- **Plugins:** Elysia CORS, Elysia Swagger
+- **Date and Time:** Luxon
+- **Utility:** Lodash
+
+# Rationale Behind Tech Stack and Package Selections
+
+- **Bun:** A modern, all-in-one JavaScript runtime designed to be a faster and more efficient alternative to Node.js.
+- **Vite:** A modern frontend build tool designed to provide a faster and more efficient development experience for web projects.
+- **Biome:** A modern toolchain designed for web projects, offering a suite of tools to streamline development and maintain code quality. It combines functionalities like formatting, linting, and diagnostics into a single, high-performance package.
+- **Elysia:** A modern, ergonomic web framework designed for building backend servers. It is optimized for Bun.js, making it incredibly fast and efficient. In addition, it offers end-to-end type safety, ensuring type integrity at both runtime and compile time. This makes it ideal for TypeScript developers. It comes with many plugins such as Bearer, CORS, JWT, GraphQL (Apollo and Yoga), OpenTelemetry, Swagger, Static, and WebSocket in addition to a growing number of community plugins, such as Lucia Auth, Elysia Clerk, Vite Plugin, OAuth 2.0, and Sentry.
+- **Material UI (MUI):** A popular open-source React component library that implements Google's Material Design principles. It provides a comprehensive set of pre-designed UI components, making it easier for developers to create visually appealing and consistent user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework that allows developers to build modern, responsive designs directly in their HTML. Instead of relying on pre-designed components like in traditional frameworks (e.g., Bootstrap and MUI), Tailwind provides a vast array of utility classes that can be combined to create custom designs.
+- **Styled Components:** A popular library for styling React applications using a CSS-in-JS approach. It allows developers to write CSS directly within JavaScript files, making it easier to manage styles alongside components.
+- **Luxon:** A modern JavaScript library for working with dates and times. It was created as a more lightweight and modern alternative to Moment.js, addressing some of its limitations.
+- **React Router:** A powerful library for managing routing in React applications. It enables developers to create dynamic, single-page applications (SPAs) with multiple views, all while maintaining seamless navigation.
+- **Axios:** Axios is a promise-based HTTP client for both the browser and Node.js. It simplifies making HTTP requests and handling responses, making it a popular choice for developers. It supports request and response interceptors, that makes it a great choice for modifying the requests before sending them to the server and the responses after receiving them from the server in one centralized place.
+- **@uidotdev/usehook:** A a collection of modern, server-safe React hooks developed by the team at ui.dev. It provides a variety of reusable hooks that simplify common tasks in React development. One very useful hook I used in this assessment is the `useDebounce` hook that delays the execution of a function or state update to improve performance, which is very useful when used to wait for the user to stop typing in a text input field instead of making an external API call for each input change (see how I use it in Home.tsx component).
+- **@dotenvx/dotenvx:** An enhanced version of the popular dotenv library, designed to manage environment variables more effectively. It offers several advanced features that make it stand out, such as cross-platform compatibility, multi-environment support, encryption/decryption of sensitive environment variables, command-Line utility, and other enhanced features.
+
+***You may have observed that my choice of the tech stacks and packages consistently emphasizes both innovation and efficiency*** 😊.
 
 # Installing Dependencies
 
@@ -77,7 +101,7 @@ Run one of the following commands from the **root directory** of the project.
 bun run dev
 ```
 
-Note that this will run both the frontend and backend, each in a separate tab on your default browser. You can now test the frontend (check the video recording I uploaded to my Google Drive, which I emailed you its link).
+Note that this will run both the frontend and backend, each in a separate tab on your default browser. You can now test the frontend (**please check the video recording I uploaded to my Google Drive, which I emailed you its link**).
 
 You can also test the backend via the swagger interface if you want.
 
