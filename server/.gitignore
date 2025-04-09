@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+
+# Dependencies
+node_modules
+
+# Environment Private Keys
+.env.keys
+
+# Original, Decrypted Environment Variables
+#.env-org
+
+# Build
+dist
+*.tsbuildinfo

@@ -1,0 +1,23 @@
+{
+  "name": "@diaazzawi/collinson-activities-ranking",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "node start.js",
+    "dev:turbo": "turbo run dev",
+    "check:turbo": "turbo run check"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "bun",
+    "esbuild",
+    "sharp"
+  ],
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "turbo": "^2.4.4"
+  },
+  "packageManager": "bun@1.2.7"
+}

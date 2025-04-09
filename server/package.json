@@ -1,0 +1,49 @@
+{
+  "name": "@diaazzawi/collinson-server",
+  "private": true,
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "env:copy": "shx cp .env-org .env",
+    "env:enc": "bunx dotenvx encrypt",
+    "dev": "bun run env:copy && bun run env:enc && NODE_ENV=development dotenvx run -f .env -- bun --watch src/index.ts",
+    "build:exe": "tsc -b && bun build --compile --minify --target=bun --outfile=dist/collinson-server src/index.ts",
+    "build:js": "tsc -b && dotenvx run -f .env -- bun build --minify --sourcemap=linked --target=bun --outdir=dist src/index.ts",
+    "start:exe": "NODE_ENV=production dotenvx run -f .env -- dist/collinson-server",
+    "start:js": "NODE_ENV=production bun dist/index.js",
+    "format": "biome format",
+    "format:write": "biome format --write --unsafe",
+    "lint": "biome lint",
+    "lint:write": "biome lint --write --unsafe",
+    "check": "biome check",
+    "check:write": "biome check --write --unsafe"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "^1.2.8",
+    "@types/lodash": "^4.17.16",
+    "@types/luxon": "^3.4.2",
+    "@types/traverse": "^0.6.37",
+    "shx": "^0.4.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@bogeychan/elysia-logger": "^0.1.8",
+    "@dotenvx/dotenvx": "^1.39.0",
+    "@elysiajs/cors": "^1.2.0",
+    "@elysiajs/swagger": "^1.2.2",
+    "elysia": "^1.2.25",
+    "lodash": "^4.17.21",
+    "luxon": "^3.6.0",
+    "open": "^10.1.0",
+    "pino": "^9.6.0",
+    "rotating-file-stream": "^3.2.6",
+    "traverse": "^0.6.11"
+  },
+  "trustedDependencies": ["@biomejs/biome"],
+  "exports": {
+    ".": "./src/exports.ts"
+  }
+}

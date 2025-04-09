@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Output Directory
+dist
+
+# Environment Private Keys
+.env.keys
+
+# Original, Decrypted Environment Variables
+#.env-org
+
+# Build
+dist
+*.tsbuildinfo
+
+# NPM Configuration
+.npmrc

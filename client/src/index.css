@@ -1,0 +1,13 @@
+/* Install PostCSS Language Support extesion to remove @tailwind and other PostCss errors */
+@import "tailwindcss/preflight"
+@tailwind utilities;
+
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-200;
+}
+
+#root {
+  min-height: 100vh;
+}
