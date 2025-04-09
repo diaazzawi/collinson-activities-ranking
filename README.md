@@ -85,12 +85,13 @@ You can also test the backend via the swagger interface if you want.
 
 Due to time constraint, I couldn't implement the following features:
 
-- **Advanced scroring logic.**
+- **Advanced scoring logic.**
 - **Login and API authentication.**
 - **Error boundary and better error handling/logging.**
-- **Using virtualized list (infinite loading!) in the dropdown portion of the `City` autocomplete component.**
+- **Using virtualized list (infinite loading!) in the dropdown portion of the `City/Address` autocomplete component.**
 - **Adding loading indicator to the UI when fetching the API.**
 - **Code optimization.**
 - **Adding more comments to the code.**
+- **UI cosmetics.**
 
 These features can be discussed during our follow-up meeting.
